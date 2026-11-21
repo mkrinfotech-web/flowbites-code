@@ -1,0 +1,72 @@
+/** Central map of Figma + video assets under /public */
+
+export const assets = {
+  heroBars: "/images/figma/hero-section-bar-image-1.png",
+  cravingCruncher: "/images/figma/craving-cruncher-1.png",
+  moodMuncher: "/images/figma/mood-muncher-1.png",
+  secretBox: "/images/figma/box-1.png",
+  heart: "/images/figma/heart-image-1.png",
+  loveWoman: "/images/figma/vector.png",
+  loveWomanAlt: "/images/figma/vector-1-.png",
+  star: "/images/figma/group-1.png",
+  spark: "/images/figma/vector-copy.png",
+  spark2: "/images/figma/vector-1-copy-5.png",
+  flower: "/images/figma/vector-copy-2.png",
+  curlyLeft: "/images/figma/vector-13.png",
+  curlyRight: "/images/figma/vector-14.png",
+  curlyBottomLeft: "/images/figma/vector-15.png",
+  curlyBottomRight: "/images/figma/vector-16.png",
+  faceLeft: "/images/figma/vector-2.png",
+  faceRight: "/images/figma/vector-3.png",
+  faceFaq: "/images/figma/vector-3-copy.png",
+  faceFaqLarge: "/images/figma/vector-3-copy-2.png",
+  faceCompare: "/images/figma/vector-2-copy-3.png",
+  faceSmall: "/images/figma/vector-4.png",
+  underline: "/images/figma/vector-copy-3.png",
+  doodleStar: "/images/figma/vector-1.png",
+  doodleBurst: "/images/figma/vector-11.png",
+  stories: {
+    wavePattern: "/images/figma-exact/stories/wave-pattern.png",
+    underline: "/images/figma-exact/stories/underline.svg",
+    overlayHeartMotion: "/images/figma-exact/stories/overlay-heart-motion.svg",
+    overlayFace: "/images/figma-exact/stories/overlay-face.svg",
+    overlayFlowerA: "/images/figma-exact/stories/overlay-flower-a.svg",
+    overlayFlowerB: "/images/figma-exact/stories/overlay-flower-b.svg",
+    overlaySpiral: "/images/figma-exact/stories/overlay-spiral.svg",
+    arrowCircleLeft: "/images/figma-exact/stories/arrow-circle-left.svg",
+    arrowCircleRight: "/images/figma-exact/stories/arrow-circle-right.svg",
+    arrowLeft: "/images/ui/left-arrow.png",
+    arrowRight: "/images/ui/right-arrow.png",
+  },
+  /** Frame 30 — Period Stories (testimonials marquee) */
+  periodStories: {
+    heartWhite: "/images/figma/vector-copy-6.png",
+    motionWhite: "/images/figma/vector-1-copy-4.png",
+    motionYellow: "/images/figma/vector-2-copy-2.png",
+    underline: "/images/figma-exact/testimonials/period-underline.svg",
+  },
+  testimonials: [
+    {
+      src: "/videos/testimonial-vid-1.mp4",
+      poster: "/images/stories-posters/poster-1.jpg",
+    },
+    {
+      src: "/videos/testimonial-vid-2.mp4",
+      poster: "/images/stories-posters/poster-2.jpg",
+    },
+    {
+      src: "/videos/testimonial-vid-3.mp4",
+      poster: "/images/stories-posters/poster-3.jpg",
+    },
+    {
+      src: "/videos/testimonial-vid-4.mp4",
+      poster: "/images/stories-posters/poster-4.jpg",
+    },
+  ],
+  showcase: [
+    "/videos/showcase-vid-1.mp4",
+    "/videos/showcase-vid-2.mp4",
+    "/videos/showcase-vid-3.mp4",
+    "/videos/showcase-vid-4.mp4",
+  ],
+} as const;

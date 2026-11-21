@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --flo-cream: #f9dbd0;
+  --flo-pink: #fa3558;
+  --flo-script: #e1304f;
+  --flo-maroon: #551313;
+  /* Brand brown for primary CTAs (same family as maroon) */
+  --flo-brown: #551313;
+  --flo-ink: #252525;
+  --flo-soft: #fef3f0;
+  --flo-blush: #fce8e2;
+  --flo-yellow: #ffcc00;
+  --background: var(--flo-cream);
+  --foreground: var(--flo-ink);
+  /* Fixed capsule header clearance for CMS / account / policy pages */
+  --flo-header-offset: 6.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-flo-cream: var(--flo-cream);
+  --color-flo-pink: var(--flo-pink);
+  --color-flo-maroon: var(--flo-maroon);
+  --color-flo-brown: var(--flo-brown);
+  --color-flo-ink: var(--flo-ink);
+  --color-flo-soft: var(--flo-soft);
+  --color-flo-blush: var(--flo-blush);
+  --color-flo-yellow: var(--flo-yellow);
+  --font-sans: var(--font-figtree);
+  --font-script: var(--font-pacifico);
+  --font-hand: var(--font-caveat);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--flo-cream);
+  color: var(--flo-ink);
+  font-family: var(--font-figtree), system-ui, sans-serif;
+}
+
+/*
+ * iOS Safari zooms focused inputs when font-size < 16px and can leave the
+ * page/cart zoomed after blur. Prefer 16px inputs over maximum-scale hacks.
+ */
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="hidden"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--flo-pink) 35%, white);
+}
+
+.font-script {
+  font-family: var(--font-pacifico), cursive;
+}
+
+.font-hand {
+  font-family: var(--font-caveat), cursive;
+}
+
+.container-flo {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 12s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 14s linear infinite;
+}
+
+.script-underline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' fill='none'%3E%3Cpath d='M2 8c40-8 80-8 120 0 25 5 50 5 76-2' stroke='%23fa3558' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 12px;
+  padding-bottom: 0.15em;
+}
+
+/* Content clearance under fixed capsule header */
+.page-under-header {
+  padding-top: var(--flo-header-offset);
+  scroll-margin-top: var(--flo-header-offset);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --flo-header-offset: 6.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --flo-header-offset: 7.25rem;
+  }
+}
+
+/* Primary CTA — brand brown */
+.btn-flo-primary {
+  background-color: var(--flo-brown);
+  color: #fff;
+}
+.btn-flo-primary:hover {
+  filter: brightness(1.08);
+}

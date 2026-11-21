@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.vercel/
+.env*
+!.env.example
+tsconfig.tsbuildinfo
+next-env.d.ts
+.admin-bootstrap-credentials.txt
+*.tsbuildinfo
+.DS_Store
+
+# Local-only exports and tool caches
+envs.json
+supabase/.temp/
+.qa-hero/

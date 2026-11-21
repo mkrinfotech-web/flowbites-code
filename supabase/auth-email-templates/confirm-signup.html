@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Confirm your FloBites account</title>
+</head>
+<body style="margin:0;padding:0;background:#fdf6f3;font-family:Georgia,'Times New Roman',serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fdf6f3;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:24px;overflow:hidden;border:1px solid rgba(92,26,46,0.08);">
+          <tr>
+            <td style="background:linear-gradient(135deg,#5c1a2e 0%,#c45c7a 100%);padding:36px 32px;text-align:center;">
+              <p style="margin:0;font-family:Georgia,serif;font-size:28px;letter-spacing:0.02em;color:#fff5f8;">FloBites</p>
+              <p style="margin:8px 0 0;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,245,248,0.85);">The Hormone Hood</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:36px 32px 28px;">
+              <h1 style="margin:0 0 16px;font-size:24px;line-height:1.25;color:#5c1a2e;font-weight:700;">Confirm your email</h1>
+              <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#4a3038;">
+                Thanks for joining FloBites. Tap the button below to confirm this email and finish signing up.
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 28px;">
+                <tr>
+                  <td style="border-radius:999px;background:#c45c7a;">
+                    <a href="{{ if .RedirectTo }}{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=signup{{ else }}{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup{{ end }}" style="display:inline-block;padding:14px 28px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;">Confirm email</a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0;font-size:13px;line-height:1.55;color:#7a4a58;">
+                If the button doesn’t work, paste this link into your browser:<br />
+                <a href="{{ if .RedirectTo }}{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=signup{{ else }}{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup{{ end }}" style="color:#c45c7a;word-break:break-all;">{{ if .RedirectTo }}{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=signup{{ else }}{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup{{ end }}</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 32px;">
+              <p style="margin:0;font-size:12px;line-height:1.5;color:#9a7a84;">
+                Soft care for your cycle · FloBites by The Hormone Hood<br />
+                If you didn’t create an account, you can ignore this email.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
