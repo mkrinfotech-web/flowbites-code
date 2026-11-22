@@ -88,7 +88,7 @@ export default async function CmsPage({
   const page = await getPublishedPage(slug);
   if (!page) notFound();
 
-  const html = renderMarkdown(page.body_md || "");
+  const html = renderMarkdown(page.body_md || "", { allowH1: true });
 
   return (
     <>

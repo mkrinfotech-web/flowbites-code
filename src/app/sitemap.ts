@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteOrigin } from "@/lib/site";
 import { getAllProductSlugs } from "@/lib/products";
+import { getPublishedPosts } from "@/lib/cms";
 import { getSupabaseAdmin } from "@/lib/supabase";
 
 /** CMS slugs via service role only — sitemap must not use cookie/session clients. */
@@ -31,7 +32,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${origin}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
   ];
+
+  const posts = await getPublishedPosts();
+  const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${origin}/blog/${p.slug}`,
+    lastModified: new Date(p.updated_at || p.published_at || now),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
 
   const productSlugs = await getAllProductSlugs();
   const productRoutes: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
@@ -49,5 +64,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...productRoutes, ...cmsRoutes];
+  return [...staticRoutes, ...productRoutes, ...postRoutes, ...cmsRoutes];
 }

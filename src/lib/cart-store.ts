@@ -158,6 +158,20 @@ export const useCartStore = create<CartState>()(
         return items.length === 1 && items[0]!.quantity === 1;
       },
     }),
-    { name: "flo-cart-v3" },
+    {
+      name: "flo-cart-v3",
+      // Don't remember whether the drawer was open, so it never pops open on page load.
+      partialize: (state) => {
+        const { isOpen: _isOpen, ...rest } = state;
+        void _isOpen;
+        return rest;
+      },
+      // Older saved carts may still contain isOpen: true — always start closed.
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as Partial<typeof current>),
+        isOpen: false,
+      }),
+    },
   ),
 );

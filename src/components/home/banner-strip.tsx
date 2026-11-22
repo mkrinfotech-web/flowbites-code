@@ -14,6 +14,7 @@ function imageUrl(path: string | null): string | null {
   const value = path?.trim();
   if (!value) return null;
   if (/^https?:\/\//i.test(value)) return value;
+  if (value.startsWith("/") && !value.startsWith("//")) return value;
   const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
   if (!base) return null;
   return `${base.replace(/\/$/, "")}/storage/v1/object/public/${MEDIA_BUCKET}/${value.replace(/^\/+/, "")}`;

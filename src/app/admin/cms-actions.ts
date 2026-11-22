@@ -266,12 +266,42 @@ export async function upsertPostAction(formData: FormData): Promise<void> {
     seoTitle: emptyToNull(formData.get("seoTitle")),
     seoDescription: emptyToNull(formData.get("seoDescription")),
     isPublished: boolFromForm(formData, "isPublished"),
+    category: emptyToNull(formData.get("category")),
+    tags: String(formData.get("tags") ?? ""),
+    authorName: emptyToNull(formData.get("authorName")),
+    publishAt: emptyToNull(formData.get("publishAt")),
   });
   if (!parsed.success) {
     redirect("/admin/posts?error=invalid");
   }
 
   const { supabase, user } = await requireStaff();
+
+  // Existing state (needed to keep published_at stable and to revalidate the old slug).
+  let existingSlug: string | null = null;
+  let existingPublishedAt: string | null = null;
+  if (parsed.data.id) {
+    const { data: existing } = await supabase
+      .from("posts")
+      .select("slug, published_at")
+      .eq("id", parsed.data.id)
+      .maybeSingle();
+    existingSlug = existing?.slug ?? null;
+    existingPublishedAt = existing?.published_at ?? null;
+  }
+
+  // Publish date rule: explicit date wins (may be in the future = scheduled);
+  // otherwise keep the existing date if it is already in the past; otherwise
+  // (first publish, or a scheduled date that was cleared) publish now.
+  const nowIso = new Date().toISOString();
+  const keepExisting =
+    existingPublishedAt && new Date(existingPublishedAt).getTime() <= Date.now()
+      ? existingPublishedAt
+      : null;
+  const publishedAt = parsed.data.isPublished
+    ? (parsed.data.publishAt ?? keepExisting ?? nowIso)
+    : null;
+
   const row = {
     slug: parsed.data.slug,
     title: parsed.data.title,
@@ -281,7 +311,10 @@ export async function upsertPostAction(formData: FormData): Promise<void> {
     seo_title: parsed.data.seoTitle,
     seo_description: parsed.data.seoDescription,
     is_published: parsed.data.isPublished,
-    published_at: parsed.data.isPublished ? new Date().toISOString() : null,
+    published_at: publishedAt,
+    category: parsed.data.category,
+    tags: parsed.data.tags,
+    author_name: parsed.data.authorName,
     author_id: user.id,
   };
 
@@ -303,6 +336,11 @@ export async function upsertPostAction(formData: FormData): Promise<void> {
   revalidatePath("/admin/posts");
   revalidatePath("/blog");
   revalidatePath(`/blog/${parsed.data.slug}`);
+  if (existingSlug && existingSlug !== parsed.data.slug) {
+    revalidatePath(`/blog/${existingSlug}`);
+  }
+  revalidatePath("/sitemap.xml");
+  revalidatePath("/");
   redirect("/admin/posts");
 }
 
@@ -323,5 +361,7 @@ export async function deletePostAction(formData: FormData): Promise<void> {
   revalidatePath("/admin/posts");
   revalidatePath("/blog");
   if (slug) revalidatePath(`/blog/${slug}`);
+  revalidatePath("/sitemap.xml");
+  revalidatePath("/");
   redirect("/admin/posts");
 }

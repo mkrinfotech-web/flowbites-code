@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Plus } from "lucide-react";
+import { categoryLabel } from "@/lib/blog";
 import { createClient } from "@/lib/supabase/server";
 import { deletePostAction } from "@/app/admin/cms-actions";
 import { ConfirmSubmitButton } from "@/components/admin/confirm-submit-button";
@@ -14,7 +15,7 @@ export default async function AdminPostsPage({
   const { data: posts, error } = await supabase
     .from("posts")
     .select(
-      "id, slug, title, is_published, published_at, updated_at, created_at",
+      "id, slug, title, is_published, published_at, updated_at, created_at, category, author_name",
     )
     .order("updated_at", { ascending: false });
 
@@ -63,6 +64,8 @@ export default async function AdminPostsPage({
               <tr>
                 <th className="px-4 py-3 font-semibold">Title</th>
                 <th className="px-4 py-3 font-semibold">Slug</th>
+                <th className="px-4 py-3 font-semibold">Category</th>
+                <th className="px-4 py-3 font-semibold">Author</th>
                 <th className="px-4 py-3 font-semibold">Status</th>
                 <th className="px-4 py-3 font-semibold">Updated</th>
                 <th className="px-4 py-3 font-semibold" />
@@ -72,14 +75,32 @@ export default async function AdminPostsPage({
               {(posts ?? []).length === 0 ? (
                 <tr>
                   <td
-                    colSpan={5}
+                    colSpan={7}
                     className="px-4 py-10 text-center text-flo-ink/50"
                   >
                     No posts yet.
                   </td>
                 </tr>
               ) : (
-                (posts ?? []).map((post) => (
+                (posts ?? []).map((post) => {
+                  const publishedAt = post.published_at
+                    ? new Date(post.published_at)
+                    : null;
+                  const scheduled =
+                    post.is_published &&
+                    publishedAt !== null &&
+                    publishedAt.getTime() > Date.now();
+                  const statusLabel = !post.is_published
+                    ? "Draft"
+                    : scheduled
+                      ? "Scheduled"
+                      : "Published";
+                  const statusClass = !post.is_published
+                    ? "bg-amber-100 text-amber-900"
+                    : scheduled
+                      ? "bg-sky-100 text-sky-800"
+                      : "bg-emerald-100 text-emerald-800";
+                  return (
                   <tr key={post.id} className="hover:bg-flo-soft/40">
                     <td className="px-4 py-3">
                       <Link
@@ -92,19 +113,30 @@ export default async function AdminPostsPage({
                     <td className="px-4 py-3 text-flo-ink/70">
                       /blog/{post.slug}
                     </td>
+                    <td className="px-4 py-3 text-flo-ink/70">
+                      {categoryLabel(post.category) ?? "—"}
+                    </td>
+                    <td className="px-4 py-3 text-flo-ink/70">
+                      {post.author_name || "—"}
+                    </td>
                     <td className="px-4 py-3">
                       <span
-                        className={`rounded-full px-2 py-0.5 text-xs font-bold ${
-                          post.is_published
-                            ? "bg-emerald-100 text-emerald-800"
-                            : "bg-amber-100 text-amber-900"
-                        }`}
+                        className={`rounded-full px-2 py-0.5 text-xs font-bold ${statusClass}`}
                       >
-                        {post.is_published ? "Published" : "Draft"}
+                        {statusLabel}
                       </span>
+                      {post.is_published && publishedAt ? (
+                        <span className="ml-2 text-xs text-flo-ink/50">
+                          {publishedAt.toLocaleString("en-IN", {
+                            dateStyle: "medium",
+                            timeStyle: scheduled ? "short" : undefined,
+                            timeZone: "Asia/Kolkata",
+                          })}
+                        </span>
+                      ) : null}
                     </td>
                     <td className="px-4 py-3 text-flo-ink/50">
-                      {new Date(post.updated_at).toLocaleDateString("en-IN")}
+                      {new Date(post.updated_at).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata" })}
                     </td>
                     <td className="px-4 py-3 text-right">
                       <form action={deletePostAction}>
@@ -119,7 +151,8 @@ export default async function AdminPostsPage({
                       </form>
                     </td>
                   </tr>
-                ))
+                  );
+                })
               )}
             </tbody>
           </table>

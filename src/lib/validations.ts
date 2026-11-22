@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isBlogCategory, parseTags } from "@/lib/blog";
 
 export const loveScoreSchema = z.object({
   name: z.string().trim().min(2).max(40),
@@ -537,6 +538,36 @@ export const postUpsertSchema = z.object({
   seoTitle: z.string().trim().max(200).optional().nullable(),
   seoDescription: z.string().trim().max(500).optional().nullable(),
   isPublished: z.boolean().default(false),
+  category: z
+    .string()
+    .trim()
+    .optional()
+    .nullable()
+    .transform((v) => (v ? v : null))
+    .refine((v) => v === null || isBlogCategory(v), "Unknown category"),
+  tags: z
+    .string()
+    .max(1000)
+    .optional()
+    .nullable()
+    .transform((v) => parseTags(v)),
+  authorName: z
+    .string()
+    .trim()
+    .max(80)
+    .optional()
+    .nullable()
+    .transform((v) => (v ? v : null)),
+  publishAt: z
+    .string()
+    .trim()
+    .optional()
+    .nullable()
+    .transform((v) => {
+      if (!v) return null;
+      const d = new Date(v);
+      return Number.isNaN(d.getTime()) ? null : d.toISOString();
+    }),
 });
 
 export const postDeleteSchema = z.object({

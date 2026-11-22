@@ -10,18 +10,25 @@ import { FloCircleSection } from "@/components/home/flo-circle-section";
 import { LoveScoreSection } from "@/components/home/love-score-section";
 import { LoveSavingsPopup } from "@/components/home/love-savings-popup";
 import { FaqSection } from "@/components/home/faq-section";
+import { BlogTeaser } from "@/components/blog/blog-teaser";
 import { SiteFooter } from "@/components/home/site-footer";
-import { getActiveBanners, getActiveFaqs, getActiveTestimonials } from "@/lib/cms";
+import {
+  getActiveBanners,
+  getActiveFaqs,
+  getActiveTestimonials,
+  getLatestPosts,
+} from "@/lib/cms";
 import { getActiveProducts } from "@/lib/products";
 import { getStoriesVideos } from "@/lib/videos";
 
 export default async function HomePage() {
-  const [storyVideos, faqs, testimonials, products, banners] = await Promise.all([
+  const [storyVideos, faqs, testimonials, products, banners, latestPosts] = await Promise.all([
     getStoriesVideos(),
     getActiveFaqs(),
     getActiveTestimonials(),
     getActiveProducts(),
     getActiveBanners("homepage_top"),
+    getLatestPosts(3),
   ]);
 
   return (
@@ -46,6 +53,7 @@ export default async function HomePage() {
       <ComparisonSection />
       <FloCircleSection />
       <LoveScoreSection />
+      <BlogTeaser posts={latestPosts} />
       <FaqSection faqs={faqs} />
       <SiteFooter />
     </>

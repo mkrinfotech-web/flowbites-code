@@ -15,7 +15,7 @@ export default async function AdminEditPostPage({
   const { data: post } = await supabase
     .from("posts")
     .select(
-      "id, slug, title, excerpt, body_md, cover_image_path, seo_title, seo_description, is_published",
+      "id, slug, title, excerpt, body_md, cover_image_path, seo_title, seo_description, is_published, published_at, category, tags, author_name",
     )
     .eq("id", id)
     .maybeSingle();

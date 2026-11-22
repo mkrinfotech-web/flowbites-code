@@ -14,6 +14,7 @@ const NAV = [
   { href: "/#bestsellers", label: "Best Sellers" },
   { href: "/flo-circle", label: "Flo Circle" },
   { href: "/#ingredients", label: "What's Inside" },
+  { href: "/blog", label: "Blog" },
   { href: "/#faq", label: "FAQ" },
 ] as const;
 
