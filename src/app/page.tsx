@@ -37,8 +37,8 @@ export default async function HomePage() {
       <BannerStrip banners={banners} />
       <HeroSection />
       <TrustBar tone="maroon" yellowAlt>
-        Loved by 36k+ Women across India • Source of Iron, Magnesium and Zinc •
-        With Dark Chocolate • Clean Ingredients
+        Loved by 36k+ Women across India • Source of Protein, Fiber, Iron, Magnesium and Zinc •
+        With Dark Chocolate • myo-inositol
       </TrustBar>
       <BestSellers products={products} />
       <TrustBar tone="whiteBrown">

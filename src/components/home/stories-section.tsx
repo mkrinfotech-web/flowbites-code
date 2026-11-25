@@ -55,7 +55,7 @@ export function StoriesSection({
     videosProp && videosProp.length > 0 ? videosProp : [...assets.testimonials];
   const reduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [locked, setLocked] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
   const [inView, setInView] = useState(true);
@@ -250,7 +250,7 @@ export function StoriesSection({
           viewport={{ once: true }}
           className="text-3xl font-bold text-white md:text-[45px]"
         >
-          Real stories, real flo.
+          Real stories, Real flo.
         </motion.h2>
         <div className="relative mx-auto mt-2 flex justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -285,11 +285,10 @@ export function StoriesSection({
           </button>
 
           <div
-            className={`relative w-full ${
-              isDesktop
-                ? "h-[520px] max-w-[920px]"
-                : "h-[420px] max-w-[340px] sm:h-[460px]"
-            }`}
+            className={`relative w-full ${isDesktop
+              ? "h-[520px] max-w-[920px]"
+              : "h-[420px] max-w-[340px] sm:h-[460px]"
+              }`}
           >
             {videos.map((item, i) => {
               const slot = relativeSlot(i, index, videos.length);
@@ -334,7 +333,6 @@ export function StoriesSection({
                           ref={centerRef}
                           src={item.src}
                           poster={item.poster}
-                          muted
                           playsInline
                           loop
                           preload="metadata"
@@ -342,7 +340,21 @@ export function StoriesSection({
                         />
                         <button
                           type="button"
-                          onClick={() => setPlaying((p) => !p)}
+                          onClick={() => {
+                            const video = centerRef.current;
+
+                            if (!video) return;
+
+                            if (video.paused) {
+                              video.muted = false;
+                              void video.play().then(() => setPlaying(true)).catch(() => {
+                                setPlaying(false);
+                              });
+                            } else {
+                              video.pause();
+                              setPlaying(false);
+                            }
+                          }}
                           className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-[#551313]/40 via-transparent to-transparent"
                           aria-label={playing ? "Pause" : "Play"}
                         >
@@ -403,7 +415,6 @@ export function StoriesSection({
                         ref={centerRef}
                         src={item.src}
                         poster={item.poster}
-                        muted
                         playsInline
                         loop
                         preload="metadata"
@@ -411,7 +422,21 @@ export function StoriesSection({
                       />
                       <button
                         type="button"
-                        onClick={() => setPlaying((p) => !p)}
+                        onClick={() => {
+                          const video = centerRef.current;
+
+                          if (!video) return;
+
+                          if (video.paused) {
+                            video.muted = false;
+                            void video.play().then(() => setPlaying(true)).catch(() => {
+                              setPlaying(false);
+                            });
+                          } else {
+                            video.pause();
+                            setPlaying(false);
+                          }
+                        }}
                         className="absolute inset-0 flex items-center justify-center"
                         aria-label={playing ? "Pause" : "Play"}
                       >
@@ -467,9 +492,8 @@ export function StoriesSection({
               aria-label={`Go to story ${i + 1}`}
               disabled={locked}
               onClick={() => lockAndSet(i)}
-              className={`h-2 rounded-full transition ${
-                i === index ? "w-6 bg-flo-pink" : "w-2 bg-white/40"
-              }`}
+              className={`h-2 rounded-full transition ${i === index ? "w-6 bg-flo-pink" : "w-2 bg-white/40"
+                }`}
             />
           ))}
         </div>

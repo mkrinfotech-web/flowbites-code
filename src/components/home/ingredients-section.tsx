@@ -6,10 +6,11 @@ import { INGREDIENT_GROUPS } from "@/lib/data";
 import { SCIENCE_BEHIND_FLO_ARTICLE_URL } from "@/lib/site";
 import { HeartCluster } from "@/components/home/heart-cluster";
 
-const SCIENCE_CTA_SRC = "/images/figma-exact/ingredients/link-img.png";
+const SCIENCE_CTA_SRC = "/images/figma-exact/ingredients/link-img.svg";
 
 const LEFT_IDS = ["super-seeds", "ragi"] as const;
 const RIGHT_IDS = ["iron-duo", "crafted"] as const;
+const BOTTOM_ID = "Inositol" as const;
 
 function groupById(id: string) {
   return INGREDIENT_GROUPS.find((g) => g.id === id)!;
@@ -198,6 +199,17 @@ export function IngredientsSection() {
                 ))}
               </div>
             </div>
+
+            {/* Bottom center — 5th ingredient below the heart image */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: 0.16, duration: 0.4 }}
+              className="mx-auto mt-6 max-w-md"
+            >
+              <IngredientCopy id={BOTTOM_ID} align="center" />
+            </motion.div>
           </div>
 
           {/* ── Mobile / tablet: heart first, then copy ── */}

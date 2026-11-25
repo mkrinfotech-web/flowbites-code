@@ -115,7 +115,7 @@ export function HeroSection() {
                 className="block whitespace-nowrap font-[family-name:var(--font-figtree)]"
                 style={{ fontWeight: 700 }}
               >
-                Some Days Just
+                Your period week
               </span>
               <span
                 className="block whitespace-nowrap font-script"
@@ -126,7 +126,7 @@ export function HeroSection() {
                   lineHeight: "1.2em",
                 }}
               >
-                Need a little love
+                nutrition just got better.
               </span>
             </h1>
 
@@ -151,9 +151,9 @@ export function HeroSection() {
                 lineHeight: "normal",
               }}
             >
-              Seeds • Millets • Dates • Chocolate and more...
-              <br />
-              All coming together in one delicious bite.
+              Seed Cycling with Dark Chocolate • Source of Protein • Iron
+              Dietary Fiber • Magnesiumand • Zinc and more...
+              <br /> A perfect snack..
             </p>
 
             {/* CTAs — node 1:49 */}
@@ -222,7 +222,7 @@ export function HeroSection() {
           <h1 className="m-0 text-[clamp(2.15rem,9.2vw,2.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-black">
             <span className="block">
               <span className="relative inline-block whitespace-nowrap pr-9">
-                Some Days Just
+                Your period week
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${H}/heart1.svg`}
@@ -238,7 +238,7 @@ export function HeroSection() {
               </span>
             </span>
             <span className="relative inline-block font-script font-normal text-[#e1304f]">
-              Need a little love
+              nutrition just got better.
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${H}/underline-top.svg`}
@@ -250,9 +250,8 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mt-5 text-[15px] font-medium leading-snug text-[#252525] sm:text-base">
-            Seeds • Millets • Dates • Chocolate and more...
-            <br />
-            All coming together in one delicious bite.
+            Seed Cycling with Dark Chocolate • Source of Protein • Iron
+            Dietary Fiber • Magnesiumand • Zinc and more...  <br /> A perfect snack..
           </p>
           <div className="relative mt-6 flex flex-wrap items-center gap-3 pl-11">
             {/* eslint-disable-next-line @next/next/no-img-element */}

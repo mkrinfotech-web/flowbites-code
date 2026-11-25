@@ -164,7 +164,7 @@ export const FAQS: Faq[] = [
     id: "f1",
     question: "What is FloBites?",
     answer:
-      "FloBites are thoughtfully crafted snack at those days. Not medicine. Just better snacking.",
+      "Flo Bites are seed cycling snacks made with seeds, ragi, dark chocolate, myo-inositol and other good ingredients — crafted for cravings, moods, and those days. Not medicine. Just better snacking.",
   },
   {
     id: "f2",
@@ -312,7 +312,14 @@ export const INGREDIENT_GROUPS = [
     id: "crafted",
     title: "Thoughtfully Crafted",
     subtitle:
-      "Dates • Jaggery • Inulin • Virgin Coconut Oil • Brown Rice Syrup • Dark Chocolate",
+      "Dates • Inulin • Virgin Coconut Oil • Brown Rice Syrup • Dark Chocolate",
+    blurb: "Every ingredient has a purpose",
+  },
+  {
+    id: "Inositol",
+    title: "Myo Inositol",
+    subtitle:
+      "Included as part of Flo Bites' carefully selected ingredient blend for period-week nutrition.",
     blurb: "Every ingredient has a purpose",
   },
 ] as const;

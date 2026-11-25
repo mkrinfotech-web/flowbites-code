@@ -211,11 +211,10 @@ export function TrustBar({
                   return (
                     <p
                       key={`${half}-${i}`}
-                      className={`mx-1.5 shrink-0 rounded-full px-5 py-2 text-sm font-bold capitalize leading-snug whitespace-nowrap md:text-[18px] lg:text-[20px] ${
-                        brown
+                      className={`mx-1.5 shrink-0 rounded-full px-5 py-2 text-sm font-bold capitalize leading-snug whitespace-nowrap md:text-[18px] lg:text-[20px] ${brown
                           ? "bg-flo-brown text-flo-soft"
                           : "bg-white text-flo-brown shadow-sm"
-                      }`}
+                        }`}
                     >
                       {chunk}
                     </p>
@@ -240,9 +239,8 @@ export function TrustBar({
 
   return (
     <div
-      className={`w-full overflow-hidden py-3.5 md:py-4 ${
-        tone === "maroon" ? "bg-flo-maroon" : "bg-flo-pink"
-      }`}
+      className={`w-full overflow-hidden py-3.5 md:py-4 ${tone === "maroon" ? "bg-flo-maroon" : "bg-flo-pink"
+        }`}
       role="presentation"
     >
       {scroll ? (
