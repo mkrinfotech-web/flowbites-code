@@ -69,14 +69,12 @@ function PickYourFloCopy({ size }: { size: "desktop" | "mobile" }) {
   const compact = size === "mobile";
   return (
     <div
-      className={`flex flex-col items-center text-center ${
-        compact ? "mt-5" : "mt-[30px]"
-      }`}
+      className={`flex flex-col items-center text-center ${compact ? "mt-5" : "mt-[30px]"
+        }`}
     >
       <p
-        className={`font-bold leading-none tracking-[-0.02em] text-flo-brown ${
-          compact ? "text-[20px]" : "text-[32px]"
-        }`}
+        className={`font-bold leading-none tracking-[-0.02em] text-flo-brown ${compact ? "text-[20px]" : "text-[32px]"
+          }`}
       >
         PICK YOUR FLO
       </p>
@@ -130,9 +128,8 @@ function CornerRibbon({ label }: { label: "Best seller" | "Try this" }) {
       aria-hidden
     >
       <span
-        className={`absolute right-[-34px] top-[18px] block w-[118px] rotate-45 py-[6px] text-center text-[10px] font-bold uppercase tracking-wide text-white shadow-sm ${
-          isBest ? "bg-flo-brown" : "bg-[#fa3558]"
-        }`}
+        className={`absolute right-[-34px] top-[18px] block w-[118px] rotate-45 py-[6px] text-center text-[10px] font-bold uppercase tracking-wide text-white shadow-sm ${isBest ? "bg-flo-brown" : "bg-[#fa3558]"
+          }`}
       >
         {label}
       </span>
@@ -169,15 +166,13 @@ function EditionTabs({
             aria-selected={selected}
             aria-controls={panelId}
             onClick={() => onChange(tab.id)}
-            className={`rounded-full font-bold tracking-wide transition ${
-              compact
-                ? "px-3.5 py-1.5 text-[11px]"
-                : "px-5 py-2 text-[13px]"
-            } ${
-              selected
+            className={`rounded-full font-bold tracking-wide transition ${compact
+              ? "px-3.5 py-1.5 text-[11px]"
+              : "px-5 py-2 text-[13px]"
+              } ${selected
                 ? "bg-flo-brown text-white shadow-sm"
                 : "border border-flo-brown/35 bg-white text-flo-brown hover:border-flo-brown"
-            }`}
+              }`}
           >
             {tab.label}
           </button>
@@ -213,7 +208,7 @@ function ProductCard({
 
       <div className="relative h-[220px] w-full overflow-hidden rounded-t-[20px] border-b border-[#d8d8d8] bg-white">
         <span className="absolute left-[14px] top-[14px] z-20 max-w-[62%] truncate rounded-[40px] border border-[rgba(85,19,19,0.25)] bg-flo-soft px-[8px] py-[4px] text-[10px] font-medium leading-none text-flo-brown">
-          {product.badge}
+          {product.tagline}
         </span>
 
         <WishlistButton
@@ -318,7 +313,7 @@ function DesktopDoodles() {
         <p className="text-[#551313]">
           You want better{" "}
           <span className="relative inline-block text-[#fa3558]">
-            those days snacking?
+            snacking on those days?
             <DoodleUnderline className="absolute -bottom-[2px] left-0 h-auto w-[112px]" />
           </span>
         </p>

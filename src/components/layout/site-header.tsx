@@ -96,7 +96,7 @@ export function SiteHeader() {
 
             <Link
               href="/#bestsellers"
-              className="hidden items-center justify-center rounded-full bg-flo-brown px-3.5 py-2.5 text-[11px] font-bold whitespace-nowrap text-white transition hover:brightness-110 active:scale-95 sm:inline-flex sm:px-4 sm:text-[12px] md:text-[13px]"
+              className="hidden items-center justify-center rounded-full bg-pink-500 px-3.5 py-2.5 text-[11px] font-bold whitespace-nowrap text-white transition hover:brightness-110 active:scale-95 sm:inline-flex sm:px-4 sm:text-[12px] md:text-[13px]"
             >
               Shop FloBites
             </Link>

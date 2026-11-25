@@ -15,7 +15,7 @@ const ROWS = [
     regular: "Just another snack bar",
   },
   {
-    flo: "Seeds • Ragi • Amla • Dark Chocolate — thoughtfully picked",
+    flo: "Seeds • Ragi • Amla • Dark Chocolate • Myo Incitol — thoughtfully picked",
     regular: "Generic ingredients",
   },
   {
@@ -77,12 +77,12 @@ export function ComparisonSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="text-3xl font-bold leading-tight text-flo-ink md:text-[45px]">
-            Those days already ask you to adjust enough.{" "}
+            Periods already ask you to adjust enough.{" "}
             <span className="text-flo-pink">Your snack shouldn&apos;t.</span>
           </h2>
           <div className="mx-auto mt-3 h-[3px] w-48 rounded-full bg-flo-pink md:w-80" />
           <p className="mt-4 text-base font-medium md:text-lg">
-            Regular bars didn&apos;t think about those days. We did.
+            Regular bars didn&apos;t think about your Flo. We did.
           </p>
         </motion.div>
 

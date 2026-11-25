@@ -19,9 +19,8 @@ function Row({
   return (
     <div className={`overflow-hidden ${offsetClass}`}>
       <div
-        className={`flex w-max gap-5 md:gap-6 ${
-          direction === "left" ? "animate-marquee-left" : "animate-marquee-right"
-        }`}
+        className={`flex w-max gap-5 md:gap-6 ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"
+          }`}
       >
         {loop.map((t, i) => (
           <article
@@ -99,7 +98,7 @@ export function TestimonialsSection({
           >
             Thousands Of{" "}
             <span className="relative inline-block pb-1 text-[#FFD54A]">
-              Those Days
+              Period Days
               <Image
                 src={T.underline}
                 alt=""

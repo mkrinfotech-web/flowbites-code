@@ -85,7 +85,7 @@ export default function FloCirclePage() {
         if (data.demo) {
           setMsg(
             data.message ??
-              "Demo membership activated (dev only). Open your portal to manage it.",
+            "Demo membership activated (dev only). Open your portal to manage it.",
           );
           return;
         }
@@ -136,9 +136,7 @@ export default function FloCirclePage() {
               Soft retail membership for your cycle weeks
             </h1>
             <p className="mt-4 text-flo-maroon/70">
-              Your cycle week has perks, Up to 20% off on every order.
-              Priority packing, gifts, early access, and optional auto-delivery
-              — join with Razorpay, or start from cart for ₹1 · 6 months.
+              Your period's week has perks, Up to 20% off on every order. Priority packing, gifts, early access, and optional auto-delivery — join with Razorpay or start from cart for ₹1 · 6 months.
             </p>
           </motion.div>
 

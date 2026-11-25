@@ -13,11 +13,11 @@ export function SiteFooter() {
       <div className="container-flo grid gap-10 py-12 md:grid-cols-[1.2fr_1fr_1fr_1.2fr] md:gap-8">
         <div>
           <Image
-            src="/images/logo.png"
-            alt="FloBites"
-            width={120}
-            height={36}
-            className="h-10 w-auto brightness-0 invert"
+            src="/images/footer_log.jpeg"
+            alt="The Hormonehood"
+            width={64}
+            height={64}
+            className="h-16 w-16 invert contrast-200 mix-blend-screen"
           />
           <p className="mt-3 text-sm text-flo-soft/80">
             Your cycle&apos;s new best friend.

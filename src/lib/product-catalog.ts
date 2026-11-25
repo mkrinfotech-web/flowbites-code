@@ -1,4 +1,6 @@
 import type { Product, ProductContent, ProductEdition } from "@/lib/data";
+import { createElement, type ReactNode } from "react";
+import { Plus } from "lucide-react";
 
 const FOOTER_NOTE =
   "Please refer to the individual bar wrappers for the complete nutritional information and ingredient declaration of each variant.";
@@ -111,12 +113,59 @@ function item(
 
 export const EDITION_TABS: {
   id: ProductEdition;
-  label: string;
+  label: ReactNode;
   hint: string;
 }[] = [
-  { id: "flo", label: "FloBites", hint: "Signature range for those days" },
-  { id: "flo_plus", label: "FloBites Plus", hint: "Distinct 35+ range" },
-];
+    {
+      id: "flo",
+      label: createElement(
+        "span",
+        { className: "flex flex-col items-center leading-tight" },
+        createElement(
+          "span",
+          { className: "inline-flex min-h-[18px] items-center" },
+          "FloBites",
+        ),
+        createElement(
+          "span",
+          { className: "text-[10px] font-medium opacity-85" },
+          "(",
+          createElement(
+            "span",
+            { className: "text-[14px] font-bold" },
+            "<",
+          ),
+          " 35 Age)",
+        ),
+      ),
+      hint: "Signature range for those days",
+    },
+    {
+      id: "flo_plus",
+      label: createElement(
+        "span",
+        { className: "flex flex-col items-center leading-tight" },
+        createElement(
+          "span",
+          { className: "inline-flex items-center gap-1" },
+          "FloBites",
+          createElement(Plus, { size: 18, strokeWidth: 2 }),
+        ),
+        createElement(
+          "span",
+          { className: "text-[10px] font-medium opacity-85" },
+          "(",
+          createElement(
+            "span",
+            { className: "text-[14px] font-bold" },
+            ">",
+          ),
+          " 35 Age)",
+        ),
+      ),
+      hint: "Distinct 35+ range",
+    },
+  ];
 
 /** Eight live SKUs from TheFlow_Products pack. */
 export const CATALOG_PRODUCTS: Product[] = [
@@ -172,6 +221,7 @@ export const CATALOG_PRODUCTS: Product[] = [
     badge: "Why choose? Have both.",
     shelfColor: "#fa3558",
     edition: "flo",
+    cornerRibbon: "Try this",
     priceInr: 649,
     ingredients: [...FLO_55, ...FLO_70],
     content: content(
@@ -192,7 +242,6 @@ export const CATALOG_PRODUCTS: Product[] = [
     badge: "Unbox your Flo.",
     shelfColor: "#ffcc00",
     edition: "flo",
-    cornerRibbon: "Try this",
     priceInr: 649,
     ingredients: [...new Set([...FLO_55, ...FLO_70])],
     content: content(
