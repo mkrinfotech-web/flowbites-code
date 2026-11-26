@@ -9,7 +9,7 @@ import { useCartStore } from "@/lib/cart-store";
 import { getOrCreateSessionId } from "@/lib/utils";
 import { assets } from "@/lib/assets";
 
-const EXAMPLES = ["Mom", "Dad", "Sister", "Partner", "Daughter"];
+const EXAMPLES = ["Mom", "Dad", "Daughter", "Sister", "Partner", "Bestie"];
 const DEBOUNCE_MS = 500;
 
 /** Blur focused fields so iOS keyboard zoom resets before the cart opens. */
