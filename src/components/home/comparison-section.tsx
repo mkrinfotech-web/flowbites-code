@@ -15,7 +15,7 @@ const ROWS = [
     regular: "Just another snack bar",
   },
   {
-    flo: "Seeds • Ragi • Amla • Dark Chocolate • Myo Incitol — thoughtfully picked",
+    flo: "Seeds • Ragi • Amla • Dark Chocolate • Myo inositol — thoughtfully picked",
     regular: "Generic ingredients",
   },
   {

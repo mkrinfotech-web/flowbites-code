@@ -27,7 +27,7 @@ function mapDbRow(row: {
     id: row.id,
     slug: row.slug,
     name: row.name,
-    tagline: row.tagline ?? fallback?.tagline ?? "",
+    tagline: row.tagline || content?.descriptionPunchy || fallback?.tagline || "",
     description:
       content?.descriptionFormal ||
       row.description ||

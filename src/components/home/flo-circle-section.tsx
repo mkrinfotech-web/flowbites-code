@@ -27,9 +27,7 @@ export function FloCircleSection() {
             Soft retail membership for your cycle weeks
           </h2>
           <p className="mt-3 text-flo-maroon/70">
-            Your cycle week has perks, Up to 20% off on every order.
-            Priority packing, gifts, early access, and optional auto-delivery —
-            all in one circle.
+            Your period's week has perks, Up to 20% off on every order. Priority packing, gifts, early access, and optional auto-delivery — all in one circle.
           </p>
         </motion.div>
 

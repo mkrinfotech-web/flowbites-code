@@ -78,7 +78,7 @@ export function HeroSection() {
           {/* Copy — node 1:42 x160 y112 w561 h468 */}
           <div
             className="absolute"
-            style={{ left: 160, top: 112, width: 561, height: 468 }}
+            style={{ left: 85, top: 112, width: 561, height: 468 }}
           >
             {/* Hearts — right of “Some Days Just” */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -88,7 +88,7 @@ export function HeroSection() {
               width={59}
               height={60}
               className="pointer-events-none absolute object-contain"
-              style={{ left: 615, top: 4, width: 59, height: 60 }}
+              style={{ left: 680, top: -12, width: 59, height: 60 }}
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -97,7 +97,7 @@ export function HeroSection() {
               width={25}
               height={25}
               className="pointer-events-none absolute object-contain"
-              style={{ left: 588, top: 58, width: 25, height: 25 }}
+              style={{ left: 663, top: 47, width: 25, height: 25 }}
             />
 
             <h1
@@ -152,7 +152,7 @@ export function HeroSection() {
               }}
             >
               Seed Cycling with Dark Chocolate • Source of Protein • Iron
-              Dietary Fiber • Magnesiumand • Zinc and more...
+              Dietary Fiber • Magnesium • Zinc and more...
               <br /> A perfect snack..
             </p>
 
@@ -188,7 +188,7 @@ export function HeroSection() {
             height={50}
             className="pointer-events-none absolute z-10 object-contain"
             style={{
-              left: 92,
+              left: 35,
               top: 530,
               width: 42,
               height: 48,
