@@ -136,7 +136,7 @@ export default function FloCirclePage() {
               Soft retail membership for your cycle weeks
             </h1>
             <p className="mt-4 text-flo-maroon/70">
-              Your period's week has perks, Up to 20% off on every order. Priority packing, gifts, early access, and optional auto-delivery — join with Razorpay or start from cart for ₹1 · 6 months.
+              Your period&apos;s week has perks, Up to 20% off on every order. Priority packing, gifts, early access, and optional auto-delivery — join with Razorpay or start from cart for ₹1 · 6 months.
             </p>
           </motion.div>
 
