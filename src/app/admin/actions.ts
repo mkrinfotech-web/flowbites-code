@@ -617,7 +617,9 @@ export async function updateProductAction(
         ? Number(formData.get("sortOrder"))
         : undefined,
     edition: formData.get("edition") || undefined,
-    tagline: formData.get("tagline") || null,
+    tagline: formData.has("tagline")
+      ? (formData.get("tagline") as string) || null
+      : undefined,
     description: formData.get("description") || undefined,
     packLabel: formData.get("packLabel") || undefined,
     descriptionFormal: formData.get("descriptionFormal") ?? undefined,
@@ -673,6 +675,9 @@ export async function updateProductAction(
     patch.content = serializeProductContent(content);
     if (content.descriptionFormal) {
       patch.description = content.descriptionFormal;
+    }
+    if (content.descriptionPunchy) {
+      patch.tagline = content.descriptionPunchy;
     }
   }
 
