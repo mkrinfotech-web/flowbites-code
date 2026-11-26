@@ -7,7 +7,7 @@ import { assets } from "@/lib/assets";
 
 const ROWS = [
   {
-    flo: "Thoughtfully crafted for those days",
+    flo: "A smarter way to answer cycle-week cravings",
     regular: "Made to fill your stomach",
   },
   {

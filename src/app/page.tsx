@@ -38,7 +38,7 @@ export default async function HomePage() {
       <HeroSection />
       <TrustBar tone="maroon" yellowAlt>
         Loved by 36k+ Women across India • Source of Protein, Fiber, Iron, Magnesium and Zinc •
-        With Dark Chocolate • myo-inositol
+        With Dark Chocolate • With Myo Inositol
       </TrustBar>
       <BestSellers products={products} />
       <TrustBar tone="whiteBrown">

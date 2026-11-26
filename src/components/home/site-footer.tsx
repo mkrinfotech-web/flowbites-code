@@ -13,15 +13,15 @@ export function SiteFooter() {
       <div className="container-flo grid gap-10 py-12 md:grid-cols-[1.2fr_1fr_1fr_1.2fr] md:gap-8">
         <div>
           <Image
-            src="/images/footer_log.jpeg"
-            alt="The Hormonehood"
-            width={64}
-            height={64}
-            className="h-16 w-16 invert contrast-200 mix-blend-screen"
-          />
-          <p className="mt-3 text-sm text-flo-soft/80">
+  src="/images/footer_log.jpeg"
+  alt="The Hormonehood"
+  width={100}
+  height={100}
+  className="h-24 w-24 invert contrast-200 mix-blend-screen"
+/>
+          {/* <p className="mt-3 text-sm text-flo-soft/80">
             Your cycle&apos;s new best friend.
-          </p>
+          </p> */}
         </div>
 
         <div>

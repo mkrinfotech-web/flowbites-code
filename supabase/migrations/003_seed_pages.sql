@@ -62,7 +62,7 @@ insert into public.pages (
   'about',
   'About FloBites',
   'about',
-  E'# About FloBites\n\nFloBites are period-week snacks made with seeds, ragi, amla & Myo-Inositol — crafted for cravings, moods, and those days.\n\nWe''re **The Hormone Essentials**: soft-retail comfort food that understands your cycle without pretending to be medicine.\n\n## What we believe\n\n- Cravings deserve better than random chocolates\n- Familiar ingredients, thoughtfully chosen\n- No maida, no refined sugar\n\nMade for your period week. Enjoyed any day.',
+  E'# About FloBites\n\nFlo Bites are seed cycling snacks made with seeds, ragi, dark chocolate, myo-inositol and other good ingredients — crafted for cravings, moods, and those days.\n\nWe''re **The Hormone Essentials**: soft-retail comfort food that understands your cycle without pretending to be medicine.\n\n## What we believe\n\n- Cravings deserve better than random chocolates\n- Familiar ingredients, thoughtfully chosen\n- No maida, no refined sugar\n\nCrafted for those days. Relished and Nourished.',
   'About — FloBites',
   'Meet FloBites — period-week snacks by The Hormone Essentials.',
   true,
