@@ -123,17 +123,17 @@ export const EDITION_TABS: {
         { className: "flex flex-col items-center leading-tight" },
         createElement(
           "span",
-          { className: "inline-flex min-h-[18px] items-center" },
+          { className: "inline-flex text-[16px] min-h-[18px] items-center" },
           "FloBites",
         ),
         createElement(
           "span",
-          { className: "text-[10px] font-medium opacity-85" },
+          { className: "text-[14px] font-medium opacity-85" },
           "(",
           createElement(
             "span",
             { className: "text-[14px] font-bold" },
-            "<",
+            "Below",
           ),
           " 35 Age)",
         ),
@@ -147,18 +147,18 @@ export const EDITION_TABS: {
         { className: "flex flex-col items-center leading-tight" },
         createElement(
           "span",
-          { className: "inline-flex items-center gap-1" },
+          { className: "inline-flex text-[16px] items-center gap-1" },
           "FloBites",
-          createElement(Plus, { size: 18, strokeWidth: 2 }),
+          createElement(Plus, { size: 13, strokeWidth: 4 }),
         ),
         createElement(
           "span",
-          { className: "text-[10px] font-medium opacity-85" },
+          { className: "text-[14px] font-medium opacity-85" },
           "(",
           createElement(
             "span",
             { className: "text-[14px] font-bold" },
-            ">",
+            "Above",
           ),
           " 35 Age)",
         ),

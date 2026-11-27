@@ -141,20 +141,52 @@ export function HeroSection() {
               style={{ left: 4, top: 165, width: 460, height: 6 }}
             />
 
-            <p
-              className="absolute m-0 font-medium tracking-[-0.48px] text-[#252525]"
-              style={{
-                left: 0,
-                top: 235,
-                width: 559,
-                fontSize: 24,
-                lineHeight: "normal",
-              }}
-            >
-              Seed Cycling with Dark Chocolate • Source of Protein • Iron
-              Dietary Fiber • Magnesium • Zinc and more...
-              <br /> A perfect snack..
-            </p>
+          <div
+          className="absolute text-[#252525]  font-medium"
+          style={{
+            left: 0,
+            top: 235,
+            width: 780,
+          }}
+        >
+          
+        <ul
+          className="
+            grid
+            grid-cols-2
+            list-disc
+            gap-x-7
+            gap-y-1
+            pl-6
+            font-medium
+            tracking-[-0.48px]
+            text-[#252525]
+            marker:text-[#fa3558]
+          "
+          style={{
+            fontSize: 24,
+            lineHeight: 1.25,
+          }}
+        >
+          <li>Seed Cycling with Dark Chocolate</li>
+          <li>Source of Protein</li>
+          <li>Iron</li>
+          <li>Dietary Fiber</li>
+          <li>Magnesium</li>
+          <li>Zinc</li>
+        </ul>
+
+
+          <p
+            className="mt-3 font-medium"
+            style={{
+              fontSize: 24,
+              lineHeight: 1.3,
+            }}
+          >
+            A perfect snack..
+          </p>
+        </div>
 
             {/* CTAs — node 1:49 */}
             <div

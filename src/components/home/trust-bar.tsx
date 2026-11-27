@@ -157,7 +157,7 @@ function MarqueeUnit({
         return (
           <span key={`${item}-${i}`} className="inline-flex shrink-0 items-center">
             <span
-              className={`text-sm font-bold capitalize leading-snug md:text-[22px] lg:text-[25px] ${color}`}
+              className={`text-sm font-bold normal-case leading-snug md:text-[22px] lg:text-[25px] ${color}`}
             >
               {item}
             </span>
@@ -211,7 +211,7 @@ export function TrustBar({
                   return (
                     <p
                       key={`${half}-${i}`}
-                      className={`mx-1.5 shrink-0 rounded-full px-5 py-2 text-sm font-bold capitalize leading-snug whitespace-nowrap md:text-[18px] lg:text-[20px] ${brown
+                      className={`mx-1.5 shrink-0 rounded-full px-5 py-2 text-sm font-bold normal-case leading-snug whitespace-nowrap md:text-[18px] lg:text-[20px] ${brown
                           ? "bg-flo-brown text-flo-soft"
                           : "bg-white text-flo-brown shadow-sm"
                         }`}
@@ -224,7 +224,7 @@ export function TrustBar({
             ))}
           </ScrubbableTrack>
         ) : (
-          <p className="px-4 text-center text-sm font-bold capitalize text-flo-brown md:text-[18px]">
+          <p className="px-4 text-center text-sm font-bold normal-case text-flo-brown md:text-[18px]">
             {text}
           </p>
         )}
@@ -255,7 +255,7 @@ export function TrustBar({
           ))}
         </ScrubbableTrack>
       ) : (
-        <p className="px-4 text-center text-sm font-bold capitalize leading-snug text-flo-soft md:text-[22px] lg:text-[25px]">
+        <p className="px-4 text-center text-sm font-bold normal-case leading-snug text-flo-soft md:text-[22px] lg:text-[25px]">
           {text}
         </p>
       )}
