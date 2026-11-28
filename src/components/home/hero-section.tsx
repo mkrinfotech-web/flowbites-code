@@ -258,7 +258,7 @@ export function HeroSection() {
       </div>
 
       {/* Mobile — locked 3-line wrap (Figma), doodles glued to script */}
-      <div className="flex flex-col gap-8 px-5 pb-10 md:hidden">
+      <div className="flex flex-col gap-8 px-4.5 pb-10 md:hidden">
         <div className="relative">
           <h1 className="m-0 text-[clamp(2.15rem,9.2vw,2.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-black">
             <span className="block">
@@ -286,7 +286,7 @@ export function HeroSection() {
                 alt=""
                 width={160}
                 height={6}
-                className="pointer-events-none absolute bottom-[0.06em] left-0 h-[6px] w-full object-fill object-left"
+                className="pointer-events-none absolute bottom-[-0.10em] left-0 h-[6px] w-full object-fill object-left"
               />
             </span>
           </h1>
