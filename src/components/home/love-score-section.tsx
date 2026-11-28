@@ -113,7 +113,7 @@ export function LoveScoreSection() {
         </svg>
       </div>
 
-      <div className="container-flo relative grid items-end gap-10 pb-16 pt-24 md:pb-20 lg:grid-cols-2 lg:items-center">
+     <div className="container-flo relative box-border w-full max-w-full px-[2px] grid items-end gap-10 pb-16 pt-24 md:pb-20 lg:grid-cols-2 lg:items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -150,7 +150,7 @@ export function LoveScoreSection() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-[28px] bg-white p-6 shadow-2xl md:p-8"
+          className="w-full min-w-0 max-w-full box-border rounded-[28px] bg-white p-6 shadow-2xl md:p-8"
         >
           <label
             htmlFor="love-score-name"

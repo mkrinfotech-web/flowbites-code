@@ -94,7 +94,7 @@ export function TestimonialsSection({
 
           <h2
             id="period-stories-heading"
-            className="text-balance text-center text-[28px] font-bold leading-[1.2] tracking-tight text-white sm:text-[34px] md:whitespace-nowrap md:text-[40px] lg:text-[44px]"
+            className="text-balance text-center text-[28px] font-bold leading-[1.2] tracking-tight text-white sm:text-[34px] md:whitespace-nowrap md:text-[36px] lg:text-[44px]"
           >
             Thousands Of{" "}
             <span className="relative inline-block pb-1 text-[#FFD54A]">
