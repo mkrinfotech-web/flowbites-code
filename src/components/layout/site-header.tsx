@@ -154,7 +154,7 @@ export function SiteHeader() {
               <Link
                 href="/#bestsellers"
                 onClick={() => setMenuOpen(false)}
-                className="mt-1 inline-flex h-11 items-center justify-center rounded-full bg-flo-brown text-sm font-bold text-white"
+                className="mt-1 inline-flex h-11 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white"
               >
                 Shop FloBites
               </Link>
