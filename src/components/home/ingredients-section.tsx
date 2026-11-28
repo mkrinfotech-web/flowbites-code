@@ -50,7 +50,7 @@ function ScienceBehindFloCta({ className = "" }: { className?: string }) {
         <img
           src={SCIENCE_CTA_SRC}
           alt=""
-          className="pointer-events-none h-auto w-full select-none transition-opacity duration-200 group-hover:opacity-90 group-active:opacity-80"
+          className="pointer-events-none h-auto w-[120%] max-w-none select-none transition-opacity duration-200 group-hover:opacity-90 group-active:opacity-80"
           draggable={false}
         />
       </a>
@@ -149,7 +149,7 @@ export function IngredientsSection() {
           </motion.div>
 
           {/* Science Behind Flo — under headline so face doodle never crops into hub copy */}
-          <div className="mt-6 w-[42vw] max-w-[150px] min-w-[110px]">
+         <div className="mt-6 w-[50vw] max-w-[190px] min-w-[110px]">
             <ScienceBehindFloCta />
           </div>
         </div>
