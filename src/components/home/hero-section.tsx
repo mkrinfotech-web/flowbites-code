@@ -150,7 +150,7 @@ export function HeroSection() {
           }}
         >
           
-        <ul
+        {/* <ul
           className="
             grid
             grid-cols-2
@@ -174,8 +174,17 @@ export function HeroSection() {
           <li>Dietary Fiber</li>
           <li>Magnesium</li>
           <li>Zinc</li>
-        </ul>
+        </ul> */}
 
+       <p
+            className="mt-3 font-medium"
+            style={{
+              fontSize: 24,
+              lineHeight: 1.3,
+            }}
+          >
+           Source of Protein, Iron, Dietary Fibre, Magnesium and Zinc
+          </p>
 
           <p
             className="mt-3 font-medium"
@@ -282,8 +291,8 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mt-5 text-[15px] font-medium leading-snug text-[#252525] sm:text-base">
-            Seed Cycling with Dark Chocolate • Source of Protein • Iron
-            Dietary Fiber • Magnesiumand • Zinc and more...  <br /> A perfect snack..
+            {/* Seed Cycling with Dark Chocolate */}
+            Source of Protein, Iron, Dietary Fibre, Magnesium and Zinc <br /> A perfect snack..
           </p>
           <div className="relative mt-6 flex flex-wrap items-center gap-3 pl-11">
             {/* eslint-disable-next-line @next/next/no-img-element */}

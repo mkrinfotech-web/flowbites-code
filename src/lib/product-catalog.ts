@@ -133,9 +133,9 @@ export const EDITION_TABS: {
           createElement(
             "span",
             { className: "text-[14px] font-bold" },
-            "Below",
+            "Below 35 Age",
           ),
-          " 35 Age)",
+          ")",
         ),
       ),
       hint: "Signature range for those days",
@@ -158,9 +158,9 @@ export const EDITION_TABS: {
           createElement(
             "span",
             { className: "text-[14px] font-bold" },
-            "Above",
+            "Above 35 Age",
           ),
-          " 35 Age)",
+          ")",
         ),
       ),
       hint: "Distinct 35+ range",
